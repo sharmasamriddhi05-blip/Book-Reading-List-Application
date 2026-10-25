@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Reading List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+    <h1>Book Reading List</h1>
+
+    <!-- ========== SUMMARY COUNTS ========== -->
+    <section class="summary" aria-label="Summary">
+      <div class="count-box"><span id="count-total">0</span><small>Total</small></div>
+      <div class="count-box"><span id="count-to-read">0</span><small>To read</small></div>
+      <div class="count-box"><span id="count-reading">0</span><small>Reading</small></div>
+      <div class="count-box"><span id="count-finished">0</span><small>Finished</small></div>
+    </section>
+
+    <!-- ========== ADD A BOOK ========== -->
+    <form id="book-form">
+      <input type="text" id="title-input" placeholder="Book title" />
+      <input type="text" id="author-input" placeholder="Author (optional)" />
+      <select id="status-input" aria-label="Reading status">
+        <option value="to-read">To read</option>
+        <option value="reading">Reading</option>
+        <option value="finished">Finished</option>
+      </select>
+      <button type="submit" class="btn">Add book</button>
+    </form>
+    <p id="form-error" aria-live="polite"></p>
+
+    <!-- ========== FILTER BUTTONS ========== -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="to-read">To read</button>
+      <button class="filter-btn" data-filter="reading">Reading</button>
+      <button class="filter-btn" data-filter="finished">Finished</button>
+    </div>
+
+    <!-- ========== THE BOOK LIST (filled in by script.js) ========== -->
+    <ul id="book-list"></ul>
+    <p id="empty-message" class="hidden">No books to show here yet.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
